@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Logik: es wird eine "Kugel" erschaffen die schaut ob sie den Boden, der über einen Layer erkannt wird, berührt
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
  
         if (isGrounded && velocity.y < 0)
