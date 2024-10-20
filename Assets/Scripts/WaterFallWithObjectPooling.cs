@@ -22,7 +22,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     public float waterFallRate = 0.1f;
     public float destroyWaterFall = 2f;
     private Vector3 waterPosition;
-    public int poolSize = 20;
+    public int poolSize = 40;
 
     private Queue<GameObject> waterFallPool;
 
