@@ -3,4 +3,4 @@ This project is designed to create a 3D world where various performance-enhancin
 
 The project is developed using Unity.
 
-It will serve as the basis for BA1, where the measurement of performance indicators will be discussed in detail.
+It will serve as the basis for BA2, where the measurement of performance indicators will be discussed in detail.
