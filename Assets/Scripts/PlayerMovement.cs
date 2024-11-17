@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public LockCamera lockCamera;
     public CharacterController controller;
  
     public float speed = 12f;
@@ -22,29 +24,32 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Logik: es wird eine "Kugel" erschaffen die schaut ob sie den Boden, der über einen Layer erkannt wird, berührt
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
- 
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
- 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
- 
-        Vector3 move = transform.right * x + transform.forward * z;
- 
-        controller.Move(move * speed * Time.deltaTime);
+        if (lockCamera != null && !lockCamera.isLocked) {
 
- 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = (float)Math.Sqrt(jumpHeight * -2f * gravity);
+            // Logik: es wird eine "Kugel" erschaffen die schaut ob sie den Boden, der über einen Layer erkannt wird, berührt
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+    
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+    
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+    
+            Vector3 move = transform.right * x + transform.forward * z;
+    
+            controller.Move(move * speed * Time.deltaTime);
+
+    
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = (float)Math.Sqrt(jumpHeight * -2f * gravity);
+            }
+    
+            velocity.y += gravity * Time.deltaTime;
+    
+            controller.Move(velocity * Time.deltaTime);
         }
- 
-        velocity.y += gravity * Time.deltaTime;
- 
-        controller.Move(velocity * Time.deltaTime);
     }
 }
