@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1831023567855515199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 419.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 500.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.025652708
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.02565271
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7066413
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7066413
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -184.158
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_Name
+      value: Grotte (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834688168548294495, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 35845569133675028, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+    - {fileID: 6345198459111943927, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+    - {fileID: 3834688168548294495, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}

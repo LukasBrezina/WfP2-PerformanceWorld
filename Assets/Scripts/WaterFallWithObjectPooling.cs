@@ -41,7 +41,8 @@ public class WaterFallWithObjectPooling : MonoBehaviour
 
         // Position anpassen
         waterPosition = rockLocation.position;
-        waterPosition.x += 5f;
+        waterPosition.x += 3f;
+        waterPosition.y -= 5f;
 
     }
 
