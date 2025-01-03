@@ -14,9 +14,10 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
     public GameObject waterFallImage;
     public Transform rockLocation;
-    public float waterFallRate = 0.1f;
-    public float destroyWaterFall = 2f;
+    public float waterFallRate = 0.5f;
+    public float destroyWaterFall = 10f;
     private Vector3 waterPosition;
+    public Vector3 customGravity = new Vector3(0,-3,0);
 
 
 
@@ -27,7 +28,8 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
         // Position anpassen
         waterPosition = rockLocation.position;
-        waterPosition.x += 5f;
+        waterPosition.x += 3f;
+        waterPosition.y -= 5f;
 
     }
 
@@ -36,7 +38,21 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
     {
         // WasserFallImage instantiaten
         GameObject waterFall = Instantiate(waterFallImage, waterPosition, Quaternion.Euler(0, 180, 0));
+        
+        Rigidbody rb = waterFall.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+
+        StartCoroutine(ApplyCustomGravity(rb));
         StartCoroutine(WaterFallDestruction(waterFall));
+    }
+
+    private IEnumerator ApplyCustomGravity(Rigidbody rb)
+    {
+        while (rb != null)
+        {
+            rb.velocity += customGravity * Time.deltaTime;
+            yield return null;
+        }
     }
 
     private IEnumerator WaterFallDestruction(GameObject obj)

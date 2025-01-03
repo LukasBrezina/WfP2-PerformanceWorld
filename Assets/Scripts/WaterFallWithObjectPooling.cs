@@ -1,28 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
-using UnityEngine.UI;
 
 public class WaterFallWithObjectPooling : MonoBehaviour
 {
-
-    /* 
-    Selbe Logik wie WaterfallWithoutObjectPooling, einziger Unterschied
-    liegt darin, dass die WasserFallImages nicht Instantiated und am Ende ihres Lebenszyklus destroyed werden,
-    sondern:
-    Es werden "poolSize"-viele Objekte sofort zu Beginn erzeugt, deaktiviert und in den Pool (Queue) gelegt.
-    Dort liegen sie dann inaktiv herum bis sie gebraucht werden. Wenn sie gebraucht werden, dann werden sie einfach nur
-    aktiviert. Nach ihrem Lebenszyklus werden sie deaktiviert und zurück in den Pool gelegt.
-
-    */
-
     public GameObject waterFallImage;
     public Transform rockLocation;
-    public float waterFallRate = 0.1f;
-    public float destroyWaterFall = 2f;
+    public float waterFallRate = 0.5f;
+    public float destroyWaterFall = 10f;
     private Vector3 waterPosition;
-    public int poolSize = 40;
+    // 22 da 2 WaterFallImage pro Sekunde * Destroy nach 10 Sekunden = 20 -> +2 für Puffer
+    public int poolSize = 22;
+    public Vector3 customGravity = new Vector3(0, -3, 0);
 
     private Queue<GameObject> waterFallPool;
 
@@ -43,29 +32,51 @@ public class WaterFallWithObjectPooling : MonoBehaviour
         waterPosition = rockLocation.position;
         waterPosition.x += 3f;
         waterPosition.y -= 5f;
-
     }
 
     void WaterFallActive()
     {
         if (waterFallPool.Count > 0)
         {
-            // WasserFallImage aus der Queue holen, Position nach vorne anpassen (sonst direkt im Stein), rotieren und aktivieren
+            // WasserFallImage aus der Queue holen, Position und Zustand anpassen
             GameObject waterFall = waterFallPool.Dequeue();
             waterFall.transform.position = waterPosition;
             waterFall.transform.rotation = Quaternion.Euler(0, 180, 0);
             waterFall.SetActive(true);
 
+            Rigidbody rb = waterFall.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            StartCoroutine(ApplyCustomGravity(rb));
             StartCoroutine(WaterFallDeactivating(waterFall));
+        }
+    }
+
+    private IEnumerator ApplyCustomGravity(Rigidbody rb)
+    {
+        while (rb != null && rb.gameObject.activeInHierarchy)
+        {
+            rb.velocity += customGravity * Time.deltaTime;
+            yield return null;
         }
     }
 
     private IEnumerator WaterFallDeactivating(GameObject waterFall)
     {
         yield return new WaitForSeconds(destroyWaterFall);
-        // am Ende des Zyklus deaktivieren statt zerstören
+
+        // Rigidbody-Zustand zurücksetzen
+        Rigidbody rb = waterFall.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        // Objekt deaktivieren und zurück in den Pool legen
         waterFall.SetActive(false);
         waterFallPool.Enqueue(waterFall);
     }
-
 }
