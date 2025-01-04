@@ -10,7 +10,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     public float destroyWaterFall = 10f;
     private Vector3 waterPosition;
     // 22 da 2 WaterFallImage pro Sekunde * Destroy nach 10 Sekunden = 20 -> +2 für Puffer
-    public int poolSize = 22;
+    public int poolSize = 20;
     public Vector3 customGravity = new Vector3(0, -3, 0);
 
     private Queue<GameObject> waterFallPool;
