@@ -5,8 +5,8 @@ using UnityEngine;
 public class AutoPathWalker : MonoBehaviour
 {
     public List<Transform> waypoints;
-    public float moveSpeed = 100f;     
-    public float reachThreshold = 0.1f;
+    public float moveSpeed = 3f;     
+    public float reachThreshold = 5f;
     public KeyCode stopKey = KeyCode.LeftShift;
 
     private bool isWalking = false;
@@ -31,7 +31,7 @@ public class AutoPathWalker : MonoBehaviour
         foreach (Transform targetWaypoint in waypoints)
         {
 
-            fixLookingAtDestination = new Vector3(targetWaypoint.position.x, 1.312f, targetWaypoint.position.z);
+            fixLookingAtDestination = new Vector3(targetWaypoint.position.x, -4.5f, targetWaypoint.position.z);
             GameObject temp = new GameObject("FixLookingWhileWalking");
             temp.transform.position = fixLookingAtDestination;
 
@@ -67,11 +67,10 @@ public class AutoPathWalker : MonoBehaviour
 
     private void StartWalking()
     {
-        if (isWalking) return; // Verhindern, dass erneut gestartet wird
+        if (isWalking) return;
         isWalking = true;
         lockCamera.isLocked = true;
 
-        // Starte die Bewegung als Coroutine
         walkCoroutine = StartCoroutine(FollowPath());
     }
 
@@ -82,7 +81,6 @@ public class AutoPathWalker : MonoBehaviour
         isWalking = false;
         lockCamera.isLocked = false;
 
-        // Coroutine abbrechen, wenn sie läuft
         if (walkCoroutine != null)
         {
             StopCoroutine(walkCoroutine);
