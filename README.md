@@ -38,3 +38,10 @@ C2 ✅ Das Spiel könnte eine Route/Pfad durch die Welt haben, der automatisch e
 * Schild mit Beschriftung
 * Druckplatte
 * Wegpfeiler
+
+### Used Assets
+* https://assetstore.unity.com/packages/3d/environments/stylized-fantasy-house-153587
+* https://assetstore.unity.com/packages/3d/environments/fantasy/lowpoly-baker-s-house-26443
+* https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153
+* https://assetstore.unity.com/packages/3d/environments/landscapes/terrain-sample-asset-pack-145808
+
