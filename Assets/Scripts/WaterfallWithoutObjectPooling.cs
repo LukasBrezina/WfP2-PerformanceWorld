@@ -18,7 +18,9 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
     public float destroyWaterFall = 10f;
     private Vector3 waterPosition;
     public Vector3 customGravity = new Vector3(0,-3,0);
-
+    public float x_Anpassung = 3f;
+    public float y_Anpassung = -5f;
+    public float z_Anpassung = 0f;
 
 
     void Start()
@@ -28,8 +30,9 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
         // Position anpassen
         waterPosition = rockLocation.position;
-        waterPosition.x += 3f;
-        waterPosition.y -= 5f;
+        waterPosition.x += x_Anpassung;
+        waterPosition.y += y_Anpassung;
+        waterPosition.z += z_Anpassung;
 
     }
 

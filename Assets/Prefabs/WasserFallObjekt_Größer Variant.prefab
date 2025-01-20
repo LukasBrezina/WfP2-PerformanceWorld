@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &845834972716143672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 246.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 175.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188156893735417902, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961034834763031188, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+      propertyPath: m_Name
+      value: "WasserFallObjekt_Gr\xF6\xDFer Variant"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}

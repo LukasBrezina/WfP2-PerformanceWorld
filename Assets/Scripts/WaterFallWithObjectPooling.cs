@@ -11,6 +11,11 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     private Vector3 waterPosition;
     // 22 da 2 WaterFallImage pro Sekunde * Destroy nach 10 Sekunden = 20 -> +2 für Puffer
     public int poolSize = 20;
+
+    public float x_Anpassung = 3f;
+    public float y_Anpassung = -5f;
+    public float z_Anpassung = 0f;
+
     public Vector3 customGravity = new Vector3(0, -3, 0);
 
     private Queue<GameObject> waterFallPool;
@@ -30,8 +35,9 @@ public class WaterFallWithObjectPooling : MonoBehaviour
 
         // Position anpassen
         waterPosition = rockLocation.position;
-        waterPosition.x += 3f;
-        waterPosition.y -= 5f;
+        waterPosition.x += x_Anpassung;
+        waterPosition.y += y_Anpassung;
+        waterPosition.z += z_Anpassung;
     }
 
     void WaterFallActive()
