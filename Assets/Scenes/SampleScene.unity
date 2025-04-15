@@ -4815,7 +4815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35845569133675028, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 35845569133675028, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
       propertyPath: z_Anpassung
@@ -4904,7 +4904,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1192530093}
+    - targetCorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1192530088}
   m_SourcePrefab: {fileID: 100100000, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
 --- !u!1001 &182169930
 PrefabInstance:
@@ -6668,7 +6674,7 @@ Transform:
   m_GameObject: {fileID: 272561061}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0003567922, y: -0.998724, z: -0.0067026345, w: -0.050055116}
-  m_LocalPosition: {x: 495.6, y: -4.477, z: 356.33}
+  m_LocalPosition: {x: 307.3, y: 3.9, z: 190.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9356,6 +9362,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b273de0d6e5818a4cb3195ce4f376ccb, type: 3}
+--- !u!1 &375992585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+  m_PrefabInstance: {fileID: 180648139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &376078418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133, type: 3}
@@ -19461,6 +19472,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
   m_PrefabInstance: {fileID: 582665002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &840888407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6148761580633436395, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
+  m_PrefabInstance: {fileID: 6884784805302068639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &840888410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840888407}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c515fd6997599b641954673ae73212d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1192324324073060012, guid: fe16fb8ec7a646c4c83e37f379abd24a, type: 3}
+  rockLocation: {fileID: 840888413}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -6
+  customGravity: {x: 0, y: -3, z: 0}
+--- !u!4 &840888413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6782168945253804625, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
+  m_PrefabInstance: {fileID: 6884784805302068639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &840888419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840888407}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99cf96aed1a17c4bac7bddc9658a1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1192324324073060012, guid: fe16fb8ec7a646c4c83e37f379abd24a, type: 3}
+  rockLocation: {fileID: 840888413}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -6
+  customGravity: {x: 0, y: -3, z: 0}
 --- !u!4 &843059702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
@@ -27113,6 +27176,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2701210136917648432, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
   m_PrefabInstance: {fileID: 180648139}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1192530088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375992585}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c515fd6997599b641954673ae73212d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1961034834763031188, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+  rockLocation: {fileID: 1192530083}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -1.5
+  customGravity: {x: 0, y: -3, z: 0}
+--- !u!114 &1192530093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375992585}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99cf96aed1a17c4bac7bddc9658a1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1961034834763031188, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+  rockLocation: {fileID: 1192530083}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -1.5
+  customGravity: {x: 0, y: -3, z: 0}
 --- !u!1001 &1192622636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31801,7 +31906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 35845569133675028, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 35845569133675028, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
       propertyPath: z_Anpassung
@@ -31890,7 +31995,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1628863345}
+    - targetCorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1628863340}
   m_SourcePrefab: {fileID: 100100000, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
 --- !u!1001 &1410302438
 PrefabInstance:
@@ -35610,6 +35721,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b273de0d6e5818a4cb3195ce4f376ccb, type: 3}
+--- !u!1 &1628863335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3330254566638321290, guid: f0edf61a2eb6a954ea23e95b4b0d042d, type: 3}
+  m_PrefabInstance: {fileID: 1409589030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628863340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628863335}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c515fd6997599b641954673ae73212d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1961034834763031188, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+  rockLocation: {fileID: 26545404}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -1.5
+  customGravity: {x: 0, y: -3, z: 0}
+--- !u!114 &1628863345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628863335}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99cf96aed1a17c4bac7bddc9658a1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFallImage: {fileID: 1961034834763031188, guid: 4ad85c64c78d2044c9280bf4ee03d26b, type: 3}
+  rockLocation: {fileID: 26545404}
+  waterFallRate: 0.5
+  destroyWaterFall: 10
+  poolSize: 20
+  x_Anpassung: 3
+  y_Anpassung: -5
+  z_Anpassung: -1.5
+  customGravity: {x: 0, y: -3, z: 0}
 --- !u!1001 &1630726821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47846,7 +48004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1721333296486548878, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1721333296486548878, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
       propertyPath: y_Anpassung
@@ -47862,7 +48020,7 @@ PrefabInstance:
       objectReference: {fileID: 1192324324073060012, guid: fe16fb8ec7a646c4c83e37f379abd24a, type: 3}
     - target: {fileID: 6089340922731959548, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089340922731959548, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
       propertyPath: z_Anpassung
@@ -47919,7 +48077,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6148761580633436395, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 840888419}
+    - targetCorrespondingSourceObject: {fileID: 6148761580633436395, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 840888410}
   m_SourcePrefab: {fileID: 100100000, guid: efd6bc55339beb94f8e47db8b3d4c5c9, type: 3}
 --- !u!1001 &8035244395821400780
 PrefabInstance:
