@@ -5,22 +5,23 @@ using Unity.VisualScripting;
 public class WaterFallObject : IPoolableObject
 {
     private GameObject instance;
-    private GameObject prefab;
-    private Transform parent;
+    private GameObject waterFallImage;
+    private Transform stoneLocation;
     private float destroyTime;
-    private MonoBehaviour runner;
+    private MonoBehaviour script;
     private Vector3 customGravity;
     private float x_Anpassung;
     private float y_Anpassung;
     private float z_Anpassung;
     private GenericObjectPool<WaterFallObject> pool;
 
-    public void Init(GameObject prefab, Transform parent, float destroyTime, MonoBehaviour runner, Vector3 gravity, float x_Anpassung, float y_Anpassung, float z_Anpassung, GenericObjectPool<WaterFallObject> pool)
+    // create Objekt
+    public void Init(GameObject waterFallImage, Transform stoneLocation, float destroyTime, MonoBehaviour script, Vector3 gravity, float x_Anpassung, float y_Anpassung, float z_Anpassung, GenericObjectPool<WaterFallObject> pool)
     {
-        this.prefab = prefab;
-        this.parent = parent;
+        this.waterFallImage = waterFallImage;
+        this.stoneLocation = stoneLocation;
         this.destroyTime = destroyTime;
-        this.runner = runner;
+        this.script = script;
         this.customGravity = gravity;
         this.x_Anpassung = x_Anpassung;
         this.y_Anpassung = y_Anpassung;
@@ -28,21 +29,21 @@ public class WaterFallObject : IPoolableObject
         this.pool = pool;
     }
 
+    // Objekt instanziieren und deaktivieren
     public void New()
     {
-        // Prefab instanziieren und deaktivieren
-        instance = Object.Instantiate(prefab);
+        instance = Object.Instantiate(waterFallImage);
         instance.SetActive(false);
     }
 
     public void Respawn()
     {
-        // Position mit Anpassungen setzen
-        instance.transform.position = parent.position + new Vector3(x_Anpassung, y_Anpassung, z_Anpassung);
+        // Position setzen und aktivieren
+        instance.transform.position = stoneLocation.position + new Vector3(x_Anpassung, y_Anpassung, z_Anpassung);
         instance.transform.rotation = Quaternion.Euler(0, 180, 0);
         instance.SetActive(true);
 
-        // Rigidbody setzen, um Custom Gravity zu aktivieren
+        // Custom Gravity aktivieren
         Rigidbody rb = instance.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -50,11 +51,11 @@ public class WaterFallObject : IPoolableObject
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            runner.StartCoroutine(ApplyCustomGravity(rb));
+            script.StartCoroutine(ApplyCustomGravity(rb));
         }
 
-        // Auto-Deaktivierung des Objekts nach einer gewissen Zeit
-        runner.StartCoroutine(AutoDeactivate());
+        // nach Zeit inaktiv setzen
+        script.StartCoroutine(AutoDeactivate());
     }
 
     private IEnumerator ApplyCustomGravity(Rigidbody rb)

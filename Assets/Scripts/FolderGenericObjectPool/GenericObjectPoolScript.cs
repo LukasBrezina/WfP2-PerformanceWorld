@@ -3,17 +3,17 @@ using System.Collections;
 
 public class GenericObjectPoolScript : MonoBehaviour
 {
-    public GameObject waterFallImage;       // Dein Prefab
-    public Transform rockLocation;          // Wo das Wasser spawnen soll
-    public float waterFallRate = 0.5f;      // Spawn-Rate
-    public float destroyWaterFall = 10f;    // Lebenszeit jedes Objekts
-    public int poolSize = 20;               // Pool-Größe
+    public GameObject waterFallImage;     
+    public Transform rockLocation;          
+    public float waterFallRate = 0.5f;      
+    public float destroyWaterFall = 10f;    
+    public int poolSize = 20;               
 
-    public float x_Anpassung = 3f;          // X-Anpassung für Position
-    public float y_Anpassung = -5f;         // Y-Anpassung für Position
-    public float z_Anpassung = 0f;          // Z-Anpassung für Position
+    public float x_Anpassung = 3f;         
+    public float y_Anpassung = -5f;         
+    public float z_Anpassung = 0f;          
 
-    public Vector3 customGravity = new Vector3(0, -3, 0);  // Benutzerdefinierte Schwerkraft
+    public Vector3 customGravity = new Vector3(0, -3, 0); 
 
     private GenericObjectPool<WaterFallObject> waterFallPool;
 
@@ -23,9 +23,10 @@ public class GenericObjectPoolScript : MonoBehaviour
 
     for (int i = 0; i < poolSize; i++)
     {
+        // WaterFallObject erstellen, intialisieren und inaktiv setzen
         var obj = new WaterFallObject();
         obj.Init(waterFallImage, rockLocation, destroyWaterFall, this, customGravity, x_Anpassung, y_Anpassung, z_Anpassung, waterFallPool);
-        obj.New(); // Jetzt korrekt, da Prefab gesetzt wurde
+        obj.New(); 
         waterFallPool.ReturnToPool(obj);
     }
 
