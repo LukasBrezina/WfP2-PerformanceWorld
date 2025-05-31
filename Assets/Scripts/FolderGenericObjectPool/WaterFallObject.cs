@@ -15,7 +15,7 @@ public class WaterFallObject : IPoolableObject
     private float z_Anpassung;
     private GenericObjectPool<WaterFallObject> pool;
 
-    // create Objekt
+    // create object function
     public void Init(GameObject waterFallImage, Transform stoneLocation, float destroyTime, MonoBehaviour script, Vector3 gravity, float x_Anpassung, float y_Anpassung, float z_Anpassung, GenericObjectPool<WaterFallObject> pool)
     {
         this.waterFallImage = waterFallImage;
@@ -29,7 +29,7 @@ public class WaterFallObject : IPoolableObject
         this.pool = pool;
     }
 
-    // Objekt instanziieren und deaktivieren
+    // instantiate object and deactivate it
     public void New()
     {
         instance = Object.Instantiate(waterFallImage);
@@ -38,12 +38,12 @@ public class WaterFallObject : IPoolableObject
 
     public void Respawn()
     {
-        // Position setzen und aktivieren
+        // set position and activate
         instance.transform.position = stoneLocation.position + new Vector3(x_Anpassung, y_Anpassung, z_Anpassung);
         instance.transform.rotation = Quaternion.Euler(0, 180, 0);
         instance.SetActive(true);
 
-        // Custom Gravity aktivieren
+        // custom gravity 
         Rigidbody rb = instance.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -54,7 +54,7 @@ public class WaterFallObject : IPoolableObject
             script.StartCoroutine(ApplyCustomGravity(rb));
         }
 
-        // nach Zeit inaktiv setzen
+        // after specified time set inactive
         script.StartCoroutine(AutoDeactivate());
     }
 
@@ -71,7 +71,7 @@ public class WaterFallObject : IPoolableObject
     {
         yield return new WaitForSeconds(destroyTime);
 
-        // Objekt deaktivieren und zurück in den Pool legen
+        // deactivate object and return to pool
         instance.SetActive(false);
         pool.ReturnToPool(this);
     }

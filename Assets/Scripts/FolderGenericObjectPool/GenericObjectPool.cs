@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 
-// generische Klasse für alle Klassen die IPoolableObject implementieren
+// generic class for each class that implement IPoolAbleObject
 public class GenericObjectPool<T> where T : IPoolableObject
 {
-    // Pool als Stack erstellen
+    // stack as pool
     private Stack<T> _pool;
 
     public GenericObjectPool()
@@ -13,7 +13,7 @@ public class GenericObjectPool<T> where T : IPoolableObject
 
     public T Spawn()
     {
-        // holt Objekt aus Pool wenn vorhanden (inhalt > 0) mit pop()
+        // get object from pool if pool count > 0
         T obj = _pool.Count > 0 ? _pool.Pop() : default;
         obj?.Respawn();
         return obj;
@@ -21,7 +21,7 @@ public class GenericObjectPool<T> where T : IPoolableObject
 
     public void ReturnToPool(T obj)
     {
-        // zurück in den Pool geben
+        // return object to pool
         _pool.Push(obj);
     }
 }

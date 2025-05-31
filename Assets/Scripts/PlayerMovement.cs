@@ -24,9 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // only be able to move when not in measuring state
         if (lockCamera != null && !lockCamera.isLocked) {
 
-            // Logik: es wird eine "Kugel" erschaffen die schaut ob sie den Boden, der über einen Layer erkannt wird, berührt
+            // a ball is created, that checks if the floor is touched, checked by layer
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     
             if (isGrounded && velocity.y < 0)

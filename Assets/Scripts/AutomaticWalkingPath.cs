@@ -25,13 +25,14 @@ public class AutoPathWalker : MonoBehaviour
     }
 
 
-    // leider noch verbuggt, prinzipiell geht es aber der Player schaut am Ende immer nach oben :/
+    // follow path, slowly moving towards each object (position) in list, but not used for measuring
     private IEnumerator FollowPath()
     {
         foreach (Transform targetWaypoint in waypoints)
         {
 
             fixLookingAtDestination = new Vector3(targetWaypoint.position.x, -4.5f, targetWaypoint.position.z);
+            // create temp object to fix position where player is looking
             GameObject temp = new GameObject("FixLookingWhileWalking");
             temp.transform.position = fixLookingAtDestination;
 

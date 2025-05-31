@@ -7,10 +7,9 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 {
 
     /*
-    Funktion:
-    Es werden jede "waterFallRate"-Sekunde ein WaterFallImage instantiated und nach dem Lebenszyklus
-    "destroyWaterFall"-Sekunden einfach zerstört.
+    Each "waterFallRate" second an object is instantiated and after its life span destroyed
     */
+    
 
     public GameObject waterFallImage;
     public Transform rockLocation;
@@ -25,10 +24,10 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
     void Start()
     {
-        // Wasserfall läuft durchgehend
+        // run forever
         InvokeRepeating("WaterfallActive", 0f, waterFallRate);
 
-        // Position anpassen
+        // change position
         waterPosition = rockLocation.position;
         waterPosition.x += x_Anpassung;
         waterPosition.y += y_Anpassung;
@@ -39,7 +38,7 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
     void WaterfallActive()
     {
-        // WasserFallImage instantiaten
+        // instantiate object
         GameObject waterFall = Instantiate(waterFallImage, waterPosition, Quaternion.Euler(0, 180, 0));
         
         Rigidbody rb = waterFall.GetComponent<Rigidbody>();
@@ -60,7 +59,7 @@ public class WaterfallWithoutObjectPooling : MonoBehaviour
 
     private IEnumerator WaterFallDestruction(GameObject obj)
     {
-        // WasserFallImage nach Zyklus einfach zerstören
+        // destroy object after specified seconds
         yield return new WaitForSeconds(destroyWaterFall);
         Destroy(obj);
     }

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class LockCamera : MonoBehaviour
 {
+    // destination object to look at (invisible gameObject)
     public Transform destination;
-  
     public bool isLocked = false;
     private Transform originalTarget;
 
@@ -20,6 +20,7 @@ public class LockCamera : MonoBehaviour
         isLocked = false;
     }
 
+    // look at destination
     void LateUpdate()
     {
         if (isLocked && destination != null)
@@ -29,6 +30,7 @@ public class LockCamera : MonoBehaviour
         }
     }
 
+    // exit measuring state with SHIFT
     void Update()
     {
     

@@ -23,7 +23,7 @@ public class GenericObjectPoolScript : MonoBehaviour
 
     for (int i = 0; i < poolSize; i++)
     {
-        // WaterFallObject erstellen, intialisieren und inaktiv setzen
+        // create waterFallObject, init and set inactive
         var obj = new WaterFallObject();
         obj.Init(waterFallImage, rockLocation, destroyWaterFall, this, customGravity, x_Anpassung, y_Anpassung, z_Anpassung, waterFallPool);
         obj.New(); 
@@ -36,7 +36,7 @@ public class GenericObjectPoolScript : MonoBehaviour
 
     void ActivateWaterFall()
     {
-        // Objekt aus dem Pool holen und aktivieren
+        // get object from pool and activate
         var obj = waterFallPool.Spawn();
     }
 }

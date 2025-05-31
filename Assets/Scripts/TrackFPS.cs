@@ -7,6 +7,7 @@ public class TrackFPS : MonoBehaviour
     private List<float> allFPS = new List<float>();
     private bool isRecording = false;
 
+    // when pressure plate collides with "Player" then FPS recording is started
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isRecording)
@@ -17,6 +18,7 @@ public class TrackFPS : MonoBehaviour
 
     private IEnumerator RecordFPS()
     {
+        // measuring 30 seconds and storing FPS in list
         isRecording = true;
         float recordingDuration = 30f;
         float elapsedTime = 0f;
@@ -37,6 +39,7 @@ public class TrackFPS : MonoBehaviour
 
     private void AnalyzeFPS()
     {
+        // print highest, lowest and average FPS in console
         if (allFPS.Count == 0)
         {
             Debug.LogWarning("No data");

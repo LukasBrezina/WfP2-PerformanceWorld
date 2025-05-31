@@ -22,7 +22,7 @@ public class UnityObjectPoolingSystem : MonoBehaviour
 
     void Awake()
     {
-        // ObjektPool von Unity erstellen
+        // object pool from unity
         objectPool = new ObjectPool<GameObject>(
             CreateWaterFall,
             OnTakeFromPool,
@@ -36,12 +36,12 @@ public class UnityObjectPoolingSystem : MonoBehaviour
 
     void Start()
     {
-        // Position anpassen
+        // change position
         waterPosition = rockLocation.position + new Vector3(x_Anpassung, y_Anpassung, z_Anpassung);
         InvokeRepeating(nameof(WaterFallActive), 0f, waterFallRate);
     }
 
-    // Objekt holen, Position anpassen und Gravity ändern
+    // get object, adjust position and gravity
     void WaterFallActive()
     {
         GameObject waterFall = objectPool.Get();
@@ -62,7 +62,7 @@ public class UnityObjectPoolingSystem : MonoBehaviour
         StartCoroutine(WaterFallDeactivating(waterFall));
     }
 
-    // Objekt erstellen
+    // create object
     private GameObject CreateWaterFall()
     {
         GameObject waterFall = Instantiate(waterFallImage);
@@ -70,25 +70,25 @@ public class UnityObjectPoolingSystem : MonoBehaviour
         return waterFall;
     }
 
-    // Objekt aktivieren
+    // activate object
     private void OnTakeFromPool(GameObject waterFall)
     {
         waterFall.SetActive(true);
     }
 
-    // Objekt deaktivieren
+    // deactivate object
     private void OnReturnedToPool(GameObject waterFall)
     {
         waterFall.SetActive(false);
     }
 
-    // Objekt zerstören
+    // destroy object
     private void OnDestroyWaterFall(GameObject waterFall)
     {
         Destroy(waterFall);
     }
 
-    // Custom Gravity setzen
+    // set custom gravity
     private IEnumerator ApplyCustomGravity(Rigidbody rb)
     {
         while (rb != null && rb.gameObject.activeInHierarchy)
@@ -98,7 +98,7 @@ public class UnityObjectPoolingSystem : MonoBehaviour
         }
     }
 
-    // nach bestimmter Zeit Objekt zurückgeben
+    // return object to pool after a specified time interval
     private IEnumerator WaterFallDeactivating(GameObject waterFall)
     {
         yield return new WaitForSeconds(destroyWaterFall);

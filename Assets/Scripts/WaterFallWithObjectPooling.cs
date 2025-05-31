@@ -9,7 +9,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     public float waterFallRate = 0.5f;
     public float destroyWaterFall = 10f;
     private Vector3 waterPosition;
-    // 22 da 2 WaterFallImage pro Sekunde * Destroy nach 10 Sekunden = 20 -> +2 für Puffer
+    // fixed pool size, changed via inspector to 100 and 200
     public int poolSize = 20;
 
     public float x_Anpassung = 3f;
@@ -33,7 +33,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
 
         InvokeRepeating("WaterFallActive", 0f, waterFallRate);
 
-        // Position anpassen
+        // adjust position
         waterPosition = rockLocation.position;
         waterPosition.x += x_Anpassung;
         waterPosition.y += y_Anpassung;
@@ -44,7 +44,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     {
         if (waterFallPool.Count > 0)
         {
-            // WasserFallImage aus der Queue holen, Position und Zustand anpassen
+            // get object from queue, adjust position and rotation
             GameObject waterFall = waterFallPool.Dequeue();
             waterFall.transform.position = waterPosition;
             waterFall.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -73,7 +73,6 @@ public class WaterFallWithObjectPooling : MonoBehaviour
     {
         yield return new WaitForSeconds(destroyWaterFall);
 
-        // Rigidbody-Zustand zurücksetzen
         Rigidbody rb = waterFall.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -81,7 +80,7 @@ public class WaterFallWithObjectPooling : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
 
-        // Objekt deaktivieren und zurück in den Pool legen
+        // deactivate object and return to pool
         waterFall.SetActive(false);
         waterFallPool.Enqueue(waterFall);
     }

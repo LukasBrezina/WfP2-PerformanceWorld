@@ -9,7 +9,8 @@ public class ActivateLockCamera : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Hallo");
+        // Debug.Log("Hallo");
+        // lock camera to position
         if (other.CompareTag(playerTag) && lockCamera != null)
         {
             lockCamera.destination = destination;

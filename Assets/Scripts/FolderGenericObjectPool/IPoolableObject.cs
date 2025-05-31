@@ -1,5 +1,5 @@
 public interface IPoolableObject
 {
-    void New();      // Objekt erstellen
-    void Respawn();  // Setzt das Objekt zurück und macht es aktiv
+    void New();      // create object
+    void Respawn();  // reset object and set active
 }

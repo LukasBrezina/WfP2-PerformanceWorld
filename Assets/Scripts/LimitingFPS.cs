@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 
 public class LimitingFPS : MonoBehaviour
 {
+    // not used, just for testing purposes
 
     void Start()
     {
-        // Limiting FPS to 200 so measuring is easier
         Application.targetFrameRate = 200;
     }
 
